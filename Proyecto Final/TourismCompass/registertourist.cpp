@@ -139,3 +139,9 @@ void RegisterTourist::on_btnReset_clicked()
     ui->txtPackageDescription->clear();
 }
 
+
+void RegisterTourist::on_pushButton_clicked()
+{
+    close(); // Cerrar la ventana actual
+}
+

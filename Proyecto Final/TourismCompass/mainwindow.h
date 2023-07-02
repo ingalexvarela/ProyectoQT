@@ -62,6 +62,11 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_pushButton_7_clicked();
+
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
+
 private:
     Ui::MainWindow *ui;  /**< The user interface object. */
     AddPackage *ptrAddPackge;  /**< Pointer to the AddPackage object. */
@@ -70,6 +75,7 @@ private:
     FindTourist *ptrFindTourist;  /**< Pointer to the FindTourist object. */
 
     QSqlDatabase database; /**< The database object. */
+    void updateButtonVisibility();
 
 };
 #endif // MAINWINDOW_H

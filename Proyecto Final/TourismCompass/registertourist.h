@@ -48,6 +48,8 @@ private slots:
     */
     void on_btnReset_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::RegisterTourist *ui; /**< Puntero a la interfaz de usuario de RegisterTourist. */
     QSqlDatabase database; /**< Base de datos utilizada para almacenar la información de los turistas. */

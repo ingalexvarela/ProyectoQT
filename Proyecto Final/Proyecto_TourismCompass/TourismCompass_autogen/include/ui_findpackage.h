@@ -28,6 +28,7 @@ public:
     QPushButton *btnFindPackage;
     QTableView *tableView;
     QLineEdit *lineEdit;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *FindPackage)
     {
@@ -75,11 +76,22 @@ public:
 "\n"
 "border: none;\n"
 ""));
+        pushButton = new QPushButton(FindPackage);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(580, 480, 101, 41));
+        QFont font2;
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setItalic(true);
+        pushButton->setFont(font2);
+        pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
+"background: #FFA500;"));
         label->raise();
         txtPackageName->raise();
         btnFindPackage->raise();
         lineEdit->raise();
         tableView->raise();
+        pushButton->raise();
 
         retranslateUi(FindPackage);
 
@@ -92,6 +104,7 @@ public:
         label->setText(QCoreApplication::translate("FindPackage", "Nombre del Paquete", nullptr));
         btnFindPackage->setText(QCoreApplication::translate("FindPackage", "Buscar", nullptr));
         lineEdit->setText(QCoreApplication::translate("FindPackage", "B\303\272squeda de Paquetes  Tur\303\255sticos", nullptr));
+        pushButton->setText(QCoreApplication::translate("FindPackage", "Volver", nullptr));
     } // retranslateUi
 
 };

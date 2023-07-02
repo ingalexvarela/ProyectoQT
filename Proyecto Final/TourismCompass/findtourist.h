@@ -38,6 +38,8 @@ private slots:
     */
     void on_btnFind_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::FindTourist *ui;  /**< El objeto de interfaz de usuario. */
     QSqlQueryModel *model; /**< El modelo para los resultados de la búsqueda. */

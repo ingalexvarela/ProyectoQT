@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>467</height>
+    <width>900</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>150</y>
+      <x>70</x>
+      <y>120</y>
       <width>181</width>
       <height>65</height>
      </rect>
@@ -36,7 +36,7 @@
      <string notr="true">color: #000000;</string>
     </property>
     <property name="text">
-     <string>Gestión de Paquetes</string>
+     <string>Agregar Paquetes</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -45,9 +45,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>250</y>
-      <width>191</width>
+      <x>70</x>
+      <y>210</y>
+      <width>181</width>
       <height>65</height>
      </rect>
     </property>
@@ -64,7 +64,7 @@
      <string notr="true">color: #000000;</string>
     </property>
     <property name="text">
-     <string>Gestión de Reservas</string>
+     <string>Agregar Turistas</string>
     </property>
     <property name="iconSize">
      <size>
@@ -82,9 +82,9 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>120</y>
-      <width>171</width>
+      <x>70</x>
+      <y>300</y>
+      <width>181</width>
       <height>65</height>
      </rect>
     </property>
@@ -110,9 +110,9 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>340</y>
-      <width>191</width>
+      <x>50</x>
+      <y>390</y>
+      <width>241</width>
       <height>65</height>
      </rect>
     </property>
@@ -126,7 +126,7 @@
      <string notr="true">color: #000000;</string>
     </property>
     <property name="text">
-     <string>Buscar Turista</string>
+     <string>Buscar Turistas y  reservación</string>
     </property>
     <property name="shortcut">
      <string/>
@@ -139,9 +139,9 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>20</y>
-      <width>321</width>
-      <height>61</height>
+      <y>10</y>
+      <width>381</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -179,8 +179,8 @@ border: none;
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>230</y>
+      <x>510</x>
+      <y>110</y>
       <width>241</width>
       <height>65</height>
      </rect>
@@ -207,9 +207,9 @@ border: none;
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>330</y>
-      <width>211</width>
+      <x>510</x>
+      <y>200</y>
+      <width>231</width>
       <height>65</height>
      </rect>
     </property>
@@ -232,13 +232,66 @@ border: none;
      <string>Reservar Paquete</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>500</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Gill Sans MT</family>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;
+background: #FFA500;</string>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>320</y>
+      <width>241</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #000000;</string>
+    </property>
+    <property name="text">
+     <string>Mis Reservas</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>768</width>
+     <width>900</width>
      <height>21</height>
     </rect>
    </property>

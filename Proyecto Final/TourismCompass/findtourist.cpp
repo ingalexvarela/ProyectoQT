@@ -45,3 +45,9 @@ void FindTourist::on_btnFind_clicked()
     qDebug() << " after btnFind_clicked";
 }
 
+
+void FindTourist::on_pushButton_clicked()
+{
+    close(); // Cerrar la ventana actual
+}
+

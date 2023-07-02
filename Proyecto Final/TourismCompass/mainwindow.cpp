@@ -6,7 +6,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QDebug>
-
+#include "global.h"
 /**
  * @brief Constructor de la clase MainWindow.
  * @param parent El widget padre.
@@ -31,6 +31,8 @@ MainWindow::MainWindow(QWidget *parent)
     else{
         qDebug() << "Database open successfully..";
     }
+    // Instalar el filtro de eventos en la ventana principal
+    this->installEventFilter(this);
 }
 /**
 * @brief Destructor de la clase MainWindow.
@@ -45,6 +47,35 @@ MainWindow::~MainWindow()
     database.close();
     QSqlDatabase::removeDatabase(database.connectionName());
     qDebug() << " ~MainWindow()";
+}
+
+void MainWindow::updateButtonVisibility()
+{   // si es cliente, no ver la gestion entera
+    if (globalInteger == "1") {
+        ui->pushButton->setVisible(false);
+        ui->pushButton_2->setVisible(false);
+        ui->pushButton_3->setVisible(false);
+        ui->pushButton_4->setVisible(false);
+        ui->pushButton_5->setVisible(true);
+        ui->pushButton_6->setVisible(true);
+        ui->pushButton_8->setVisible(true);
+    } else { // si es administrador, no ver la gestion individual
+        ui->pushButton_5->setVisible(false);
+        ui->pushButton_6->setVisible(false);
+        ui->pushButton_8->setVisible(false);
+        ui->pushButton->setVisible(true);
+        ui->pushButton_2->setVisible(true);
+        ui->pushButton_3->setVisible(true);
+        ui->pushButton_4->setVisible(true);
+    }
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == this && event->type() == QEvent::Show) {
+        updateButtonVisibility();
+    }
+    return QMainWindow::eventFilter(obj, event);
 }
 
 /**
@@ -84,3 +115,8 @@ void MainWindow::on_pushButton_6_clicked()
     ptrRegisterTourist->show(); /**< Viajar a registrar turista */
 }
 
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    close(); // Cerrar la ventana actual
+}

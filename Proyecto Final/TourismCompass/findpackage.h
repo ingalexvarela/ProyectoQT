@@ -37,6 +37,8 @@ private slots:
     */
     void on_btnFindPackage_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::FindPackage *ui; /**< El objeto de interfaz de usuario. */
     QSqlQueryModel *model;   /**< El modelo de consulta de la base de datos. */

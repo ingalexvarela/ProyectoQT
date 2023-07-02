@@ -110,7 +110,7 @@ public:
     {
         if (LoginSystem->objectName().isEmpty())
             LoginSystem->setObjectName("LoginSystem");
-        LoginSystem->resize(894, 550);
+        LoginSystem->resize(900, 550);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);

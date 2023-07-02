@@ -33,10 +33,15 @@ void AddPackage::on_btnSave_clicked()
     QString packageName = ui->txtPackageName->text();
     QString packageDescription = ui->txtDescription->toPlainText();
     QString amount = ui->txtAmount->text();
+
+    QString number = ui->txtAmount_4->text();
+    QString Startdate = ui->txtAmount_3->text();
+    QString Enddate = ui->txtAmount_2->text();
+
     qDebug() << "Package Name : "<< packageName <<" Package Description : "<<packageDescription << "Amount : "<<amount;
     QSqlDatabase database = QSqlDatabase::database("DB1");
     QSqlQuery query(database);
-    query.prepare("insert into Package (PackageName, PackageDescription, Amount) values('" + packageName + "','" + packageDescription + "','" + amount + "')");
+    query.prepare("insert into Package (PackageName, PackageDescription, Amount, number, Startdate, Enddate) values('" + packageName + "','" + packageDescription + "','" + amount + "','" + number + "','" + Startdate + "','" + Enddate + "')");
     query.exec();
     query.finish();query.clear();
     qDebug() << "Last error : "<< query.lastError().text();
@@ -51,5 +56,11 @@ void AddPackage::on_btnReset_clicked()
     ui->txtPackageName->clear();
     ui->txtDescription->clear();
     ui->txtAmount->clear();
+}
+
+
+void AddPackage::on_btnSave_2_clicked()
+{
+    close(); // Cerrar la ventana actual
 }
 

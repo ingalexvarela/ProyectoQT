@@ -29,6 +29,7 @@ public:
     QPushButton *btnFind;
     QTableView *tableView;
     QTextEdit *textEdit;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *FindTourist)
     {
@@ -69,6 +70,16 @@ public:
 "\n"
 "border: none;\n"
 ""));
+        pushButton = new QPushButton(FindTourist);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(550, 430, 131, 51));
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(true);
+        font2.setItalic(true);
+        pushButton->setFont(font2);
+        pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
+"background: #FFA500;"));
         QWidget::setTabOrder(txtTourstfName, btnFind);
 
         retranslateUi(FindTourist);
@@ -89,6 +100,7 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700; font-style:italic; color:#888a14;\">Gesti\303\263n de Reservas</span></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("FindTourist", "Volver", nullptr));
     } // retranslateUi
 
 };

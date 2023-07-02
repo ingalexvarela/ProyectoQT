@@ -42,6 +42,8 @@ private slots:
     */
     void on_btnReset_clicked();
 
+    void on_btnSave_2_clicked();
+
 private:
     Ui::AddPackage *ui;  /**< El objeto de interfaz de usuario. */
     QSqlDatabase database; /**< El objeto de la base de datos. */

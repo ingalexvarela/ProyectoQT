@@ -50,16 +50,17 @@ public:
     QPushButton *btnReset;
     QLabel *label_10;
     QTextEdit *textEdit;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *RegisterTourist)
     {
         if (RegisterTourist->objectName().isEmpty())
             RegisterTourist->setObjectName("RegisterTourist");
-        RegisterTourist->resize(756, 500);
+        RegisterTourist->resize(740, 600);
         RegisterTourist->setStyleSheet(QString::fromUtf8("background-image:url(:/images/d.jpg) ;"));
         formLayoutWidget = new QWidget(RegisterTourist);
         formLayoutWidget->setObjectName("formLayoutWidget");
-        formLayoutWidget->setGeometry(QRect(20, 30, 711, 451));
+        formLayoutWidget->setGeometry(QRect(20, 40, 701, 451));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName("formLayout");
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -280,8 +281,17 @@ public:
 "\n"
 "border: none;\n"
 ""));
+        pushButton = new QPushButton(RegisterTourist);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(609, 543, 91, 31));
+        QFont font3;
+        font3.setPointSize(14);
+        pushButton->setFont(font3);
+        pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
+"background: #FFA500;"));
         textEdit->raise();
         formLayoutWidget->raise();
+        pushButton->raise();
 
         retranslateUi(RegisterTourist);
 
@@ -312,6 +322,7 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:700; font-style:italic;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-style:normal; color:#ffffff;\">Gesti\303\263n de Reservas</span></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("RegisterTourist", "Volver", nullptr));
     } // retranslateUi
 
 };

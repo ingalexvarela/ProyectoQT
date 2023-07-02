@@ -116,11 +116,36 @@ border: none;
     <string>Búsqueda de Paquetes  Turísticos</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>480</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #000000;
+background: #FFA500;</string>
+   </property>
+   <property name="text">
+    <string>Volver</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>txtPackageName</zorder>
   <zorder>btnFindPackage</zorder>
   <zorder>lineEdit</zorder>
   <zorder>tableView</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>
