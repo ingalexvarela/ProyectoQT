@@ -7,6 +7,9 @@
 #include "./ui_mainwindow.h"
 #include <QDebug>
 #include "global.h"
+#include <QTimer>
+#include <QMessageBox>
+
 /**
  * @brief Constructor de la clase MainWindow.
  * @param parent El widget padre.
@@ -56,6 +59,11 @@ void MainWindow::updateButtonVisibility()
         ui->pushButton_2->setVisible(false);
         ui->pushButton_3->setVisible(false);
         ui->pushButton_4->setVisible(false);
+        ui->pushButton_9->setVisible(false);
+
+        ui->label->setVisible(false);
+        ui->txtPackageName->setVisible(false);
+
         ui->pushButton_5->setVisible(true);
         ui->pushButton_6->setVisible(true);
         ui->pushButton_8->setVisible(true);
@@ -67,6 +75,9 @@ void MainWindow::updateButtonVisibility()
         ui->pushButton_2->setVisible(true);
         ui->pushButton_3->setVisible(true);
         ui->pushButton_4->setVisible(true);
+        ui->pushButton_9->setVisible(true);
+        ui->label->setVisible(true);
+        ui->txtPackageName->setVisible(true);
     }
 }
 
@@ -120,3 +131,57 @@ void MainWindow::on_pushButton_7_clicked()
 {
     close(); // Cerrar la ventana actual
 }
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    QString packageName = ui->txtPackageName->text();
+
+    // Mostrar cuadro de diálogo de confirmación
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "", "¿Está seguro de que desea borrar el paquete: " + packageName + "?",
+                                        QMessageBox::Yes | QMessageBox::No).exec()) {
+
+        QSqlQuery query(database);  // Crear una consulta SQL en la base de datos "DB1"
+
+        // Preparar la consulta DELETE para eliminar las filas que coincidan con el nombre del paquete en la tabla "Package"
+        query.prepare("DELETE FROM Package WHERE packageName = :packageName");
+
+        // Enlazar el valor del nombre del paquete a la consulta
+        query.bindValue(":packageName", packageName);
+
+        // Ejecutar la consulta
+        if (query.exec()) {
+            // Si la consulta se ejecuta correctamente, mostrar un mensaje de éxito en la etiqueta label
+            ui->label->setText("Paquete eliminado con éxito.");
+
+                // Crear un temporizador para limpiar la etiqueta después de 5 segundos
+                QTimer::singleShot(5000, this, [this]() {
+                    ui->label->clear();  // Limpiar la etiqueta label
+                });
+
+            // Limpiar el campo de texto txtPackageName
+            ui->txtPackageName->clear();
+
+            // Eliminar las filas en la tabla "Tourist" que coincidan con el nombre del paquete en la columna "PackageName"
+            QSqlQuery deleteQuery(database);
+            deleteQuery.prepare("DELETE FROM Tourist WHERE PackageName = :packageName");
+            deleteQuery.bindValue(":packageName", packageName);
+            deleteQuery.exec();
+        } else {
+            // Si hay un error en la ejecución de la consulta, mostrar un mensaje de error en la consola
+            qDebug() << "Error al eliminar la fila:" << query.lastError().text();
+        }
+    }
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    ptrFindPackage->show(); /**< Viajar a encontrar paquete */
+}
+
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    ptrFindTourist->show();   /**< Viajar a encontrar turista*/
+}
+

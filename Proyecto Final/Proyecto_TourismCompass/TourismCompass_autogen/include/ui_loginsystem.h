@@ -105,6 +105,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *userBrowse;
     QPushButton *adminBrowse;
+    QPushButton *delAButton_2;
 
     void setupUi(QMainWindow *LoginSystem)
     {
@@ -1176,7 +1177,7 @@ public:
 "Color: #fefefefe;"));
         delAButton = new QPushButton(frame_7);
         delAButton->setObjectName("delAButton");
-        delAButton->setGeometry(QRect(440, 490, 181, 31));
+        delAButton->setGeometry(QRect(200, 430, 181, 31));
         delAButton->setFont(font9);
         delAButton->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
@@ -1229,12 +1230,20 @@ public:
 "Border-radius: 0;\n"
 "Background: #393;\n"
 "Color: #fefefe;"));
+        delAButton_2 = new QPushButton(frame_7);
+        delAButton_2->setObjectName("delAButton_2");
+        delAButton_2->setGeometry(QRect(20, 430, 141, 31));
+        delAButton_2->setFont(font9);
+        delAButton_2->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
+"Border-radius: 5px;\n"
+"Background: #a11;\n"
+"Color: #fefefe;"));
         winStack->addWidget(page_4);
         LoginSystem->setCentralWidget(centralWidget);
 
         retranslateUi(LoginSystem);
 
-        winStack->setCurrentIndex(2);
+        winStack->setCurrentIndex(4);
         stackedWidget->setCurrentIndex(0);
 
 
@@ -1334,6 +1343,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("LoginSystem", "Agregar Cliente", nullptr));
         userBrowse->setText(QCoreApplication::translate("LoginSystem", "Panel USUARIOS", nullptr));
         adminBrowse->setText(QCoreApplication::translate("LoginSystem", "Panel ADMINISTRADORES", nullptr));
+        delAButton_2->setText(QCoreApplication::translate("LoginSystem", "BORRAR USUARIOS", nullptr));
     } // retranslateUi
 
 };

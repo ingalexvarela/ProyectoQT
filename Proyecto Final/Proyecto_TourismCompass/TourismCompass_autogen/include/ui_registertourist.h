@@ -49,8 +49,8 @@ public:
     QPushButton *btnSave;
     QPushButton *btnReset;
     QLabel *label_10;
-    QTextEdit *textEdit;
     QPushButton *pushButton;
+    QLabel *label_11;
 
     void setupUi(QDialog *RegisterTourist)
     {
@@ -264,34 +264,28 @@ public:
 
         label_10 = new QLabel(formLayoutWidget);
         label_10->setObjectName("label_10");
+        label_10->setStyleSheet(QString::fromUtf8("color: #FFFFFF;"));
 
         formLayout->setWidget(14, QFormLayout::FieldRole, label_10);
 
-        textEdit = new QTextEdit(RegisterTourist);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(300, 0, 251, 41));
-        QFont font2;
-        font2.setPointSize(12);
-        font2.setBold(true);
-        font2.setItalic(true);
-        textEdit->setFont(font2);
-        textEdit->setAutoFillBackground(false);
-        textEdit->setStyleSheet(QString::fromUtf8("color: #8A2BE2;\n"
-"background-color: transparent;\n"
-"\n"
-"border: none;\n"
-""));
         pushButton = new QPushButton(RegisterTourist);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(609, 543, 91, 31));
-        QFont font3;
-        font3.setPointSize(14);
-        pushButton->setFont(font3);
+        QFont font2;
+        font2.setPointSize(14);
+        pushButton->setFont(font2);
         pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
 "background: #FFA500;"));
-        textEdit->raise();
-        formLayoutWidget->raise();
-        pushButton->raise();
+        label_11 = new QLabel(RegisterTourist);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(270, 10, 291, 31));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Bahnschrift")});
+        font3.setPointSize(20);
+        font3.setBold(true);
+        label_11->setFont(font3);
+        label_11->setStyleSheet(QString::fromUtf8("color: #FFFFFF;\n"
+"background:  transparent;"));
 
         retranslateUi(RegisterTourist);
 
@@ -314,15 +308,8 @@ public:
         btnSave->setText(QCoreApplication::translate("RegisterTourist", "Agregar", nullptr));
         btnReset->setText(QCoreApplication::translate("RegisterTourist", "Limpiar", nullptr));
         label_10->setText(QString());
-        textEdit->setHtml(QCoreApplication::translate("RegisterTourist", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:700; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-style:normal; color:#ffffff;\">Gesti\303\263n de Reservas</span></p></body></html>", nullptr));
         pushButton->setText(QCoreApplication::translate("RegisterTourist", "Volver", nullptr));
+        label_11->setText(QCoreApplication::translate("RegisterTourist", "Gesti\303\263n de Reservas", nullptr));
     } // retranslateUi
 
 };

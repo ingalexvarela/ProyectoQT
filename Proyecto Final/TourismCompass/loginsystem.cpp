@@ -634,6 +634,7 @@ void LoginSystem::on_delAButton_clicked()
         if(dQuery.exec())
         {
             ui->adminLabel->setText("¡Consulta ejecutada!");
+            on_stackedWidget_currentChanged(1);
         }
     }
 }
@@ -705,6 +706,7 @@ void LoginSystem::on_pushButton_clicked()
     {
         qDebug() << "Error al ejecutar la consulta:" << query.lastError().text();
     }
+    on_stackedWidget_currentChanged(1); //OJO
 }
 
 /**
@@ -764,6 +766,7 @@ void LoginSystem::on_pushButton_2_clicked()
     {
         qDebug() << "Error al ejecutar la consulta:" << query.lastError().text();
     }
+    on_stackedWidget_currentChanged(0); //OJO
 }
 
 void LoginSystem::on_pushButton_3_clicked()
@@ -775,5 +778,24 @@ void LoginSystem::on_pushButton_3_clicked()
 void LoginSystem::on_adminButton_3_clicked()
 {
     ptrMainWindow->show(); /**< Viajar a Main */
+}
+
+
+void LoginSystem::on_delAButton_2_clicked()
+{
+    if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,
+                                        "", "¿Está seguro de que desea borrar todos los usuarios?"\
+                                        "\n(Esto no borrará a los administradores ni a ti)",
+                                            QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        QSqlQuery dQuery(db.db);
+        dQuery.prepare("DELETE FROM sys_users WHERE rank == 1 AND username != \"" + this->username + "\"");
+
+        if(dQuery.exec())
+        {
+            ui->adminLabel->setText("¡Consulta ejecutada!");
+            on_stackedWidget_currentChanged(0);
+        }
+    }
 }
 

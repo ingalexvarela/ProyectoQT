@@ -17,7 +17,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,23 +27,25 @@ public:
     QLineEdit *txtTourstfName;
     QPushButton *btnFind;
     QTableView *tableView;
-    QTextEdit *textEdit;
     QPushButton *pushButton;
+    QLabel *label_11;
 
     void setupUi(QDialog *FindTourist)
     {
         if (FindTourist->objectName().isEmpty())
             FindTourist->setObjectName("FindTourist");
-        FindTourist->resize(700, 500);
+        FindTourist->resize(1000, 500);
         FindTourist->setStyleSheet(QString::fromUtf8("background-image:url(:/images/d.jpg) ;"));
         label = new QLabel(FindTourist);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 50, 181, 16));
+        label->setGeometry(QRect(10, 45, 181, 21));
         QFont font;
         font.setPointSize(11);
         font.setBold(true);
         font.setItalic(true);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("background: #000000;\n"
+"color:  #FFA500;"));
         txtTourstfName = new QLineEdit(FindTourist);
         txtTourstfName->setObjectName("txtTourstfName");
         txtTourstfName->setGeometry(QRect(10, 70, 271, 20));
@@ -57,22 +58,15 @@ public:
         font1.setBold(true);
         font1.setItalic(true);
         btnFind->setFont(font1);
+        btnFind->setStyleSheet(QString::fromUtf8("background: #000000;\n"
+"color:  #FFA500;"));
         tableView = new QTableView(FindTourist);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(10, 110, 671, 231));
+        tableView->setGeometry(QRect(10, 110, 981, 291));
         tableView->setStyleSheet(QString::fromUtf8("background-image:url(:/images/b.jpg) ;"));
-        textEdit = new QTextEdit(FindTourist);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(240, 10, 241, 41));
-        textEdit->setAutoFillBackground(false);
-        textEdit->setStyleSheet(QString::fromUtf8("color: #8A2BE2;\n"
-"background-color: transparent;\n"
-"\n"
-"border: none;\n"
-""));
         pushButton = new QPushButton(FindTourist);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(550, 430, 131, 51));
+        pushButton->setGeometry(QRect(830, 410, 121, 71));
         QFont font2;
         font2.setPointSize(12);
         font2.setBold(true);
@@ -80,6 +74,16 @@ public:
         pushButton->setFont(font2);
         pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
 "background: #FFA500;"));
+        label_11 = new QLabel(FindTourist);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(260, 10, 291, 31));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Bahnschrift")});
+        font3.setPointSize(20);
+        font3.setBold(true);
+        label_11->setFont(font3);
+        label_11->setStyleSheet(QString::fromUtf8("color:  #00FF00;\n"
+"background:  transparent;"));
         QWidget::setTabOrder(txtTourstfName, btnFind);
 
         retranslateUi(FindTourist);
@@ -92,15 +96,8 @@ public:
         FindTourist->setWindowTitle(QCoreApplication::translate("FindTourist", "Find Tourist", nullptr));
         label->setText(QCoreApplication::translate("FindTourist", "Nombre del Turista", nullptr));
         btnFind->setText(QCoreApplication::translate("FindTourist", "Buscar", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("FindTourist", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700; font-style:italic; color:#888a14;\">Gesti\303\263n de Reservas</span></p></body></html>", nullptr));
         pushButton->setText(QCoreApplication::translate("FindTourist", "Volver", nullptr));
+        label_11->setText(QCoreApplication::translate("FindTourist", "Gesti\303\263n de Reservas", nullptr));
     } // retranslateUi
 
 };

@@ -112,6 +112,8 @@ private slots:
 
     void on_adminButton_3_clicked();
 
+    void on_delAButton_2_clicked();
+
 private:
     Ui::LoginSystem *ui;
     QString username; /**< El nombre de usuario. */

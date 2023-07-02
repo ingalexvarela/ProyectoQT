@@ -27,20 +27,20 @@ public:
     QLineEdit *txtPackageName;
     QPushButton *btnFindPackage;
     QTableView *tableView;
-    QLineEdit *lineEdit;
     QPushButton *pushButton;
+    QLabel *label_11;
 
     void setupUi(QDialog *FindPackage)
     {
         if (FindPackage->objectName().isEmpty())
             FindPackage->setObjectName("FindPackage");
-        FindPackage->resize(700, 540);
+        FindPackage->resize(1000, 540);
         FindPackage->setStyleSheet(QString::fromUtf8("background-image:url(:/images/background_image.jpg) ;\n"
 "\n"
 ""));
         label = new QLabel(FindPackage);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 40, 141, 16));
+        label->setGeometry(QRect(10, 50, 141, 16));
         QFont font;
         font.setFamilies({QString::fromUtf8("Script MT Bold")});
         font.setPointSize(12);
@@ -51,47 +51,38 @@ public:
 ""));
         txtPackageName = new QLineEdit(FindPackage);
         txtPackageName->setObjectName("txtPackageName");
-        txtPackageName->setGeometry(QRect(150, 40, 281, 20));
+        txtPackageName->setGeometry(QRect(150, 50, 281, 20));
         btnFindPackage = new QPushButton(FindPackage);
         btnFindPackage->setObjectName("btnFindPackage");
-        btnFindPackage->setGeometry(QRect(470, 40, 80, 18));
+        btnFindPackage->setGeometry(QRect(440, 50, 80, 18));
         btnFindPackage->setStyleSheet(QString::fromUtf8("color: #000000;\n"
 ""));
         tableView = new QTableView(FindPackage);
         tableView->setObjectName("tableView");
         tableView->setEnabled(false);
-        tableView->setGeometry(QRect(30, 80, 441, 361));
+        tableView->setGeometry(QRect(10, 80, 981, 401));
         tableView->setAutoFillBackground(true);
         tableView->setStyleSheet(QString::fromUtf8("background-image:url(:/images/b.jpg) ;"));
-        lineEdit = new QLineEdit(FindPackage);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(80, 0, 321, 24));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Segoe UI Black")});
-        font1.setPointSize(14);
-        font1.setBold(true);
-        lineEdit->setFont(font1);
-        lineEdit->setStyleSheet(QString::fromUtf8("color: #8A2BE2;\n"
-"background-color: transparent;\n"
-"\n"
-"border: none;\n"
-""));
         pushButton = new QPushButton(FindPackage);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(580, 480, 101, 41));
-        QFont font2;
-        font2.setPointSize(14);
-        font2.setBold(true);
-        font2.setItalic(true);
-        pushButton->setFont(font2);
+        pushButton->setGeometry(QRect(880, 490, 101, 41));
+        QFont font1;
+        font1.setPointSize(14);
+        font1.setBold(true);
+        font1.setItalic(true);
+        pushButton->setFont(font1);
         pushButton->setStyleSheet(QString::fromUtf8("color: #000000;\n"
 "background: #FFA500;"));
-        label->raise();
-        txtPackageName->raise();
-        btnFindPackage->raise();
-        lineEdit->raise();
-        tableView->raise();
-        pushButton->raise();
+        label_11 = new QLabel(FindPackage);
+        label_11->setObjectName("label_11");
+        label_11->setGeometry(QRect(170, 10, 421, 31));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Bahnschrift")});
+        font2.setPointSize(20);
+        font2.setBold(true);
+        label_11->setFont(font2);
+        label_11->setStyleSheet(QString::fromUtf8("color: #8A2BE2;\n"
+"background:  transparent;"));
 
         retranslateUi(FindPackage);
 
@@ -103,8 +94,8 @@ public:
         FindPackage->setWindowTitle(QCoreApplication::translate("FindPackage", "Find Package", nullptr));
         label->setText(QCoreApplication::translate("FindPackage", "Nombre del Paquete", nullptr));
         btnFindPackage->setText(QCoreApplication::translate("FindPackage", "Buscar", nullptr));
-        lineEdit->setText(QCoreApplication::translate("FindPackage", "B\303\272squeda de Paquetes  Tur\303\255sticos", nullptr));
         pushButton->setText(QCoreApplication::translate("FindPackage", "Volver", nullptr));
+        label_11->setText(QCoreApplication::translate("FindPackage", "B\303\272squeda de Paquetes  Tur\303\255sticos", nullptr));
     } // retranslateUi
 
 };

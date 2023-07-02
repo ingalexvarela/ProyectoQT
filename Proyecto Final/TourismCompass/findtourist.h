@@ -32,6 +32,13 @@ public:
     */
     ~FindTourist();
 
+protected:
+    /**
+    * @brief Método que se ejecuta cuando la ventana se muestra.
+    * Realiza la verificación de la condición y oculta los objetos según sea necesario.
+    */
+    void showEvent(QShowEvent *event) override;
+
 private slots:
     /**
     * @brief Slot para el evento de clic del botón de búsqueda.
@@ -40,9 +47,11 @@ private slots:
 
     void on_pushButton_clicked();
 
+
 private:
     Ui::FindTourist *ui;  /**< El objeto de interfaz de usuario. */
     QSqlQueryModel *model; /**< El modelo para los resultados de la búsqueda. */
+
 };
 
 #endif // FINDTOURIST_H

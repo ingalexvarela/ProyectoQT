@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>1000</width>
     <height>540</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>40</y>
+     <y>50</y>
      <width>141</width>
      <height>16</height>
     </rect>
@@ -47,7 +47,7 @@ color: #000000;
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>40</y>
+     <y>50</y>
      <width>281</width>
      <height>20</height>
     </rect>
@@ -56,8 +56,8 @@ color: #000000;
   <widget class="QPushButton" name="btnFindPackage">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>40</y>
+     <x>440</x>
+     <y>50</y>
      <width>80</width>
      <height>18</height>
     </rect>
@@ -76,10 +76,10 @@ color: #000000;
    </property>
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>80</y>
-     <width>441</width>
-     <height>361</height>
+     <width>981</width>
+     <height>401</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -89,38 +89,11 @@ color: #000000;
     <string notr="true">background-image:url(:/images/b.jpg) ;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>0</y>
-     <width>321</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Segoe UI Black</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: #8A2BE2;
-background-color: transparent;
-
-border: none;
-</string>
-   </property>
-   <property name="text">
-    <string>Búsqueda de Paquetes  Turísticos</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>480</y>
+     <x>880</x>
+     <y>490</y>
      <width>101</width>
      <height>41</height>
     </rect>
@@ -140,12 +113,30 @@ background: #FFA500;</string>
     <string>Volver</string>
    </property>
   </widget>
-  <zorder>label</zorder>
-  <zorder>txtPackageName</zorder>
-  <zorder>btnFindPackage</zorder>
-  <zorder>lineEdit</zorder>
-  <zorder>tableView</zorder>
-  <zorder>pushButton</zorder>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>10</y>
+     <width>421</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Bahnschrift</family>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #8A2BE2;
+background:  transparent;</string>
+   </property>
+   <property name="text">
+    <string>Búsqueda de Paquetes  Turísticos</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

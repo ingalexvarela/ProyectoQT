@@ -15,6 +15,13 @@ FindPackage::FindPackage(QWidget *parent) :
 {
     ui->setupUi(this);
     model = new QSqlQueryModel(); // Inicializar el modelo de consulta
+
+    // Establecer el modelo de datos en el QTableView
+    ui->tableView->setModel(model);
+
+    // Configurar el tamaño de las celdas
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); // Ajustar el ancho de las columnas al tamaño del QTableView
+    ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents); // Ajustar el alto de las filas al contenido
 }
 
 /**
@@ -38,8 +45,6 @@ void FindPackage::on_btnFindPackage_clicked()
 
     /**< Ejecuta la consulta en la base de datos para buscar los paquetes que contienen el nombre proporcionado. */
     model->setQuery("select * from Package where PackageName like '%" + packageName + "%'", database);
-    /**< Establece el modelo como el modelo de datos para la vista de la tabla. */
-    ui->tableView->setModel(model);
 }
 
 /**
