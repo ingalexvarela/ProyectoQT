@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include "global.h"
+#include <QTimer>
 
 QString globalEmail; // Declaración de la variable global
 QString globalInteger;  // Declaración de la variable global
@@ -695,7 +696,10 @@ void LoginSystem::on_pushButton_clicked()
 
     if (query.exec())
     {
-        ui->adminLabel->setText("¡Nuevo usuario añadido con éxito!");
+        ui->adminLabel->setText("¡Nuevo administrador añadido con éxito!");
+        QTimer::singleShot(3000, [this]() {
+            ui->adminLabel->setText("Recuerde Asegurarse de  cualquier cambio");});
+
     }
     else
     {
@@ -752,7 +756,9 @@ void LoginSystem::on_pushButton_2_clicked()
 
     if (query.exec())
     {
-        ui->adminLabel->setText("¡Nuevo usuario añadido con éxito!");
+        ui->adminLabel->setText("¡Nuevo usuario - cliente añadido con éxito!");
+        QTimer::singleShot(3000, [this]() {
+        ui->adminLabel->setText("Recuerde Asegurarse de  cualquier cambio");});
     }
     else
     {

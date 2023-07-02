@@ -1,0 +1,9 @@
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/TourismCompass.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/edit_cache.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/rebuild_cache.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/list_install_components.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/install.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/install/local.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/install/strip.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/TourismCompass_autogen_timestamp_deps.dir
+C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/CMakeFiles/TourismCompass_autogen.dir
