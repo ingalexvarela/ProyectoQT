@@ -12,6 +12,7 @@ Proyecto Final
 - [Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas](#propuestas-de-las-pantallas-funcionalidad-y-widgets-para-implementar-las-acciones-esperadas)
 - [Diagrama de flujo de la interfaz gráfica](#diagrama-de-flujo-de-la-interfaz-gráfica)
 - [Entregas del proyecto](#entregas-del-proyecto)
+- [Uso](#uso)
 - [Contacto](#contacto)
 
 ### Explicación del proyecto
@@ -46,6 +47,22 @@ Se agregan 9 Ventanas para el administrador y 8 ventanas para el cliente.
     - [x] No es necesario la funcionalidad completa a este punto
 - [x] Avance final:
     - [x] Entregable final con funcionalidad completa.
+
+### Uso
+El proyecto contiene los siguientes directorios:
+1. Directorio TourismCompass: Contiene los archivos fuente de Qt Design (Qt6) y bases de datos
+2. Directorio Instalador: Contiene un instalador asegurese indicarle la ruta de instalación
+ a la carpeta donde se encuentre el directorio (TourismCompass).
+3. Directorio Proyecto_TourismCompass: Es el proyecto construido desde Qt6, es el directorio (build)
+4. Directorio Portable_TourismCompass: es el resultado de la instalación del programa ejecutado desde el Directorio Instalador. 
+    recuerde este directorio funciona ligado al Directorio TourismCompass.
+5. archivo Doxyfile: contiene la configuración para la generación de página de la documentanción Doxygen. 
+6. archivo Enunciado Proyecto.pdf: contiene lo solicitado del proyecto 
+7. archivo Makefile: se ejecuta desde  Windows, crea la documentación, compila el proyecto del Directorio Proyecto_TourismCompass 
+    con windeployqt (herramienta de Qt6, debe tenerla instalada y agregada al Path), ejecuta el programa y abre la página de la documentación. 
+8. Directorio Compilado: es la compilación tras la ejecución del make con "mingw32-make -s"  (compilador MinGW debe estar instalado).
+9. Directorio docs: carpeta de la documentación Doxygen.
+10.archivo README.md: Archivo de reporte de este proyecto.
 
 ### Contacto
 ***Autor:* Alex Varela Quirós
