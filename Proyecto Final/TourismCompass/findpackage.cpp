@@ -48,7 +48,7 @@ void FindPackage::on_btnFindPackage_clicked()
 }
 
 /**
- * @brief Slot para el evento de clic del botón pushButton.
+ * @brief Slot para el evento de clic del botón pushButton "Volver"
 */
 void FindPackage::on_pushButton_clicked()
 {

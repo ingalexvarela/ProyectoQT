@@ -44,7 +44,9 @@ private slots:
     * @brief Slot para el evento de clic del botón de búsqueda.
     */
     void on_btnFind_clicked();
-
+    /**
+    * @brief Slot para el evento de clic del pushButton de "volver".
+    */
     void on_pushButton_clicked();
 
 

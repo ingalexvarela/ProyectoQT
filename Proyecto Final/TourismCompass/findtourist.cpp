@@ -11,6 +11,7 @@
  * @param parent Puntero al widget padre (opcional).
  * Este constructor crea una nueva instancia de la clase FindTourist y configura la interfaz de usuario.
  * Inicializa el puntero model a NULL.
+ * Instala el filtro de eventos.
 */
 FindTourist::FindTourist(QWidget *parent) :
     QDialog(parent),
@@ -53,7 +54,8 @@ void FindTourist::showEvent(QShowEvent *event)
 
 /**
 * @brief Método que se ejecuta cuando se hace clic en el botón "Find".
-* Realiza una búsqueda en la base de datos de turistas utilizando el nombre proporcionado.
+* Realiza una búsqueda en la base de datos de turistas utilizando el nombre proporcionado si es administrador
+* Realiza una búsqueda en la base de datos de turistas utilizando el correo del usuario cliente.
 */
 void FindTourist::on_btnFind_clicked()
 {
@@ -93,6 +95,13 @@ void FindTourist::on_btnFind_clicked()
     }
 }
 
+/**
+ *  @brief  Esta función se llama cuando se hace clic en el pushButton "volver".
+ *  Realiza las siguientes acciones:
+ *  Establece un modelo nulo para borrar QTableView (tableView).
+ *  Elimina el modelo existente para liberar memoria.
+ *  Cierra la ventana actual.
+*/
 void FindTourist::on_pushButton_clicked()
 {
     ui->tableView->setModel(nullptr); // Establecer un modelo nulo para limpiar el tableView

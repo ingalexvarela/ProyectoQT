@@ -58,7 +58,9 @@ void AddPackage::on_btnReset_clicked()
     ui->txtAmount->clear();
 }
 
-
+/**
+ * @brief Slot para el evento de clic del botón volver que cierra la pestaña.
+*/
 void AddPackage::on_btnSave_2_clicked()
 {
     close(); // Cerrar la ventana actual

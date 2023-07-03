@@ -707,22 +707,21 @@ public:
         font12.setPointSize(12);
         font12.setBold(true);
         label_3->setFont(font12);
-        label_3->setStyleSheet(QString::fromUtf8("color: #fefefe;\n"
+        label_3->setStyleSheet(QString::fromUtf8("Background:  transparent;\n"
+"color: #fefefe;\n"
 "font-weight: bold;"));
         nameLabel = new QLabel(frame_4);
         nameLabel->setObjectName("nameLabel");
         nameLabel->setGeometry(QRect(120, 285, 221, 21));
         nameLabel->setFont(font2);
-        nameLabel->setStyleSheet(QString::fromUtf8("Background: #000000;\n"
-"color: #0000FF;"));
+        nameLabel->setStyleSheet(QString::fromUtf8("Background:  transparent;\n"
+"color: #FFA500;"));
         editButton = new QPushButton(frame_4);
         editButton->setObjectName("editButton");
         editButton->setGeometry(QRect(40, 430, 171, 41));
         editButton->setFont(font4);
-        editButton->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
-"Border-radius: 5px;\n"
-"Background: #393;\n"
-"Color: #fefefe;"));
+        editButton->setStyleSheet(QString::fromUtf8("Background: #FFDAB9;\n"
+"color: #000000;"));
         delButton = new QPushButton(frame_4);
         delButton->setObjectName("delButton");
         delButton->setGeometry(QRect(40, 490, 171, 41));
@@ -736,14 +735,15 @@ public:
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(50, 310, 61, 21));
         label_6->setFont(font12);
-        label_6->setStyleSheet(QString::fromUtf8("color: #fefefe;\n"
+        label_6->setStyleSheet(QString::fromUtf8("Background:  transparent;\n"
+"color: #fefefe;\n"
 "font-weight: bold;"));
         emailLabel = new QLabel(frame_4);
         emailLabel->setObjectName("emailLabel");
         emailLabel->setGeometry(QRect(120, 310, 221, 21));
         emailLabel->setFont(font2);
-        emailLabel->setStyleSheet(QString::fromUtf8("Background: #000000;\n"
-"color: #0000FF;"));
+        emailLabel->setStyleSheet(QString::fromUtf8("Background:  transparent;\n"
+"color: #FFA500;"));
         frame_6 = new QFrame(frame_4);
         frame_6->setObjectName("frame_6");
         frame_6->setGeometry(QRect(110, 140, 128, 128));
@@ -764,16 +764,16 @@ public:
         adminButton->setFont(font13);
         adminButton->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
-"Background: #339;\n"
-"Color: #fefefe;"));
+"Background: #FFDAB9;\n"
+"color: #000000;"));
         adminButton_2 = new QPushButton(frame_4);
         adminButton_2->setObjectName("adminButton_2");
         adminButton_2->setGeometry(QRect(510, 320, 291, 51));
         adminButton_2->setFont(font13);
         adminButton_2->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
-"Background: #C0FFC0;\n"
-"Color: #000000;"));
+"Background: #FFDAB9;\n"
+"color: #000000;"));
         adminButton_3 = new QPushButton(frame_4);
         adminButton_3->setObjectName("adminButton_3");
         adminButton_3->setGeometry(QRect(540, 150, 211, 51));
@@ -1102,10 +1102,11 @@ public:
         winStack->addWidget(page_3);
         page_4 = new QWidget();
         page_4->setObjectName("page_4");
+        page_4->setStyleSheet(QString::fromUtf8(""));
         frame_7 = new QFrame(page_4);
         frame_7->setObjectName("frame_7");
         frame_7->setGeometry(QRect(0, 0, 921, 551));
-        frame_7->setStyleSheet(QString::fromUtf8("background: #101010;"));
+        frame_7->setStyleSheet(QString::fromUtf8("background-image:url(:/images/aventura.jpg) ;"));
         frame_7->setFrameShape(QFrame::StyledPanel);
         frame_7->setFrameShadow(QFrame::Raised);
         label_8 = new QLabel(frame_7);
@@ -1116,14 +1117,15 @@ public:
         font14.setBold(true);
         font14.setItalic(true);
         label_8->setFont(font14);
-        label_8->setStyleSheet(QString::fromUtf8("text-align: center;\n"
-"color: #393;\n"
+        label_8->setStyleSheet(QString::fromUtf8(" background: transparent;\n"
+"text-align: center;\n"
+"color: #000000;\n"
 "margin: 0 auto;\n"
 "font-size: 35px;\n"
 "font-family: 'Droid Sans';"));
         editedButton_2 = new QPushButton(frame_7);
         editedButton_2->setObjectName("editedButton_2");
-        editedButton_2->setGeometry(QRect(700, 420, 141, 31));
+        editedButton_2->setGeometry(QRect(670, 460, 141, 31));
         editedButton_2->setFont(font9);
         editedButton_2->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
@@ -1158,7 +1160,7 @@ public:
         stackedWidget->addWidget(page_6);
         backButton_5 = new QPushButton(frame_7);
         backButton_5->setObjectName("backButton_5");
-        backButton_5->setGeometry(QRect(700, 380, 141, 31));
+        backButton_5->setGeometry(QRect(670, 410, 141, 31));
         QFont font15;
         font15.setPointSize(10);
         font15.setBold(true);
@@ -1169,15 +1171,15 @@ public:
 "Color: #fefefe;"));
         pageButton = new QPushButton(frame_7);
         pageButton->setObjectName("pageButton");
-        pageButton->setGeometry(QRect(700, 510, 155, 27));
+        pageButton->setGeometry(QRect(670, 510, 155, 27));
         pageButton->setFont(font12);
         pageButton->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 0;\n"
-"Background: #800080;\n"
-"Color: #fefefefe;"));
+"color: #000000;\n"
+"background: #FFA500;"));
         delAButton = new QPushButton(frame_7);
         delAButton->setObjectName("delAButton");
-        delAButton->setGeometry(QRect(200, 430, 181, 31));
+        delAButton->setGeometry(QRect(200, 460, 181, 31));
         delAButton->setFont(font9);
         delAButton->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
@@ -1185,34 +1187,36 @@ public:
 "Color: #fefefe;"));
         adminLabel = new QLabel(frame_7);
         adminLabel->setObjectName("adminLabel");
-        adminLabel->setGeometry(QRect(420, 380, 241, 16));
-        adminLabel->setStyleSheet(QString::fromUtf8("color: #fefefe;"));
+        adminLabel->setGeometry(QRect(630, 370, 241, 16));
+        adminLabel->setStyleSheet(QString::fromUtf8("background: #00FFFF;\n"
+"color: #000000;"));
         headLabel = new QLabel(frame_7);
         headLabel->setObjectName("headLabel");
-        headLabel->setGeometry(QRect(20, 70, 479, 16));
+        headLabel->setGeometry(QRect(20, 70, 381, 16));
         QFont font16;
         font16.setPointSize(12);
         font16.setBold(true);
         font16.setItalic(true);
         headLabel->setFont(font16);
-        headLabel->setStyleSheet(QString::fromUtf8("color: #fefefe;"));
+        headLabel->setStyleSheet(QString::fromUtf8("color: #fefefe;\n"
+"background: transparent;"));
         pushButton = new QPushButton(frame_7);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(440, 410, 171, 31));
+        pushButton->setGeometry(QRect(200, 410, 171, 31));
         pushButton->setFont(font4);
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: #00FFFF;\n"
+        pushButton->setStyleSheet(QString::fromUtf8("background: #00FFFF;\n"
 "color: #0000FF;\n"
 ""));
         pushButton_2 = new QPushButton(frame_7);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(440, 450, 131, 31));
+        pushButton_2->setGeometry(QRect(20, 410, 131, 31));
         pushButton_2->setFont(font4);
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: #FFFF00;\n"
+        pushButton_2->setStyleSheet(QString::fromUtf8("background: #00FFFF;\n"
 "color: #0000FF;\n"
 ""));
         userBrowse = new QPushButton(frame_7);
         userBrowse->setObjectName("userBrowse");
-        userBrowse->setGeometry(QRect(20, 380, 155, 27));
+        userBrowse->setGeometry(QRect(20, 370, 155, 27));
         QFont font17;
         font17.setPointSize(10);
         font17.setBold(true);
@@ -1220,19 +1224,19 @@ public:
         userBrowse->setFont(font17);
         userBrowse->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 0;\n"
-"Background: #393;\n"
-"Color: #fefefe;"));
+"Background: #000000;\n"
+"Color: #FFFFFF;"));
         adminBrowse = new QPushButton(frame_7);
         adminBrowse->setObjectName("adminBrowse");
-        adminBrowse->setGeometry(QRect(200, 380, 181, 27));
+        adminBrowse->setGeometry(QRect(200, 370, 181, 27));
         adminBrowse->setFont(font17);
         adminBrowse->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 0;\n"
-"Background: #393;\n"
-"Color: #fefefe;"));
+"Background: #000000;\n"
+"Color: #FFFFFF;"));
         delAButton_2 = new QPushButton(frame_7);
         delAButton_2->setObjectName("delAButton_2");
-        delAButton_2->setGeometry(QRect(20, 430, 141, 31));
+        delAButton_2->setGeometry(QRect(20, 460, 141, 31));
         delAButton_2->setFont(font9);
         delAButton_2->setStyleSheet(QString::fromUtf8("Padding: 1px;\n"
 "Border-radius: 5px;\n"
@@ -1341,8 +1345,8 @@ public:
         headLabel->setText(QString());
         pushButton->setText(QCoreApplication::translate("LoginSystem", "Agregar Administrador", nullptr));
         pushButton_2->setText(QCoreApplication::translate("LoginSystem", "Agregar Cliente", nullptr));
-        userBrowse->setText(QCoreApplication::translate("LoginSystem", "Panel USUARIOS", nullptr));
-        adminBrowse->setText(QCoreApplication::translate("LoginSystem", "Panel ADMINISTRADORES", nullptr));
+        userBrowse->setText(QCoreApplication::translate("LoginSystem", "VER USUARIOS", nullptr));
+        adminBrowse->setText(QCoreApplication::translate("LoginSystem", "VER ADMINISTRADORES", nullptr));
         delAButton_2->setText(QCoreApplication::translate("LoginSystem", "BORRAR USUARIOS", nullptr));
     } // retranslateUi
 

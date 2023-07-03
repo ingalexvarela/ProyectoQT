@@ -12,6 +12,8 @@
 
 /**
  * @brief Constructor de la clase MainWindow.
+ * Inicializa la interfaz de usuario, crea instancias de los objetos relacionados con la funcionalidad de la aplicación,
+ * configura y abre la base de datos, y establece un filtro de eventos en la ventana principal.
  * @param parent El widget padre.
 */
 MainWindow::MainWindow(QWidget *parent)
@@ -52,6 +54,11 @@ MainWindow::~MainWindow()
     qDebug() << " ~MainWindow()";
 }
 
+/**
+ * @brief Actualiza la visibilidad de los botones en función del tipo de usuario.
+ * Si el usuario es un cliente, oculta los botones relacionados con la gestión individual y muestra los botones para la gestión general.
+ * Si el usuario es un administrador, oculta los botones para la gestión general y muestra los botones para la gestión individual.
+*/
 void MainWindow::updateButtonVisibility()
 {   // si es cliente, no ver la gestion entera
     if (globalInteger == "1") {
@@ -81,6 +88,13 @@ void MainWindow::updateButtonVisibility()
     }
 }
 
+/**
+ * @brief Implementación del filtro de eventos.
+ * Filtra los eventos de mostrar la ventana principal y llama a la función updateButtonVisibility() para actualizar la visibilidad de los botones.
+ * @param obj El objeto que envía el evento.
+ * @param event El evento que se ha recibido.
+ * @return true si el evento se ha manejado, false en caso contrario.
+*/
 bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 {
     if (obj == this && event->type() == QEvent::Show) {
@@ -120,18 +134,45 @@ void MainWindow::on_pushButton_4_clicked()
     ptrFindTourist->show();   /**< Viajar a encontrar turista*/
 }
 
-
+/**
+ * @brief Slot para el evento de clic del botón pushButton_6.
+ * Muestra la ventana de registro de turistas para el cliente.
+*/
 void MainWindow::on_pushButton_6_clicked()
 {
-    ptrRegisterTourist->show(); /**< Viajar a registrar turista */
+    ptrRegisterTourist->show(); /**< Viajar a registrar turista cliente*/
 }
 
-
+/**
+ * @brief Slot para el evento de clic del botón pushButton_7.
+ * Cierra la ventana actual.
+*/
 void MainWindow::on_pushButton_7_clicked()
 {
     close(); // Cerrar la ventana actual
 }
 
+/**
+ * @brief Slot para el evento de clic del botón pushButton_9.
+ * Elimina un paquete y todas las filas relacionadas de la base de datos.
+ * Muestra un cuadro de diálogo de confirmación antes de realizar la eliminación.
+ * @details El método realiza los siguientes pasos:
+ * Obtiene el nombre del paquete del campo de texto txtPackageName.
+ * Muestra un cuadro de diálogo de confirmación para solicitar la confirmación del usuario.
+ * Si el usuario confirma la eliminación:
+ * Crea una consulta SQL para eliminar las filas del paquete en la tabla "Package".
+ * Enlaza el valor del nombre del paquete a la consulta.
+ * Ejecuta la consulta.
+ * Si la consulta se ejecuta correctamente:
+ * - Muestra un mensaje de éxito en la etiqueta label.
+ * - Configura un temporizador para limpiar la etiqueta después de 5 segundos.
+ * - Limpia el campo de texto txtPackageName.
+ * - Crea una nueva consulta para eliminar las filas relacionadas en la tabla "Tourist".
+ * - Enlaza el valor del nombre del paquete a la consulta.
+ * - Ejecuta la consulta para eliminar las filas relacionadas.
+ * Si hay un error en la ejecución de la consulta, muestra un mensaje de error en la consola.
+ * @note Este método utiliza la base de datos "DB1".
+*/
 void MainWindow::on_pushButton_9_clicked()
 {
     QString packageName = ui->txtPackageName->text();
@@ -173,13 +214,19 @@ void MainWindow::on_pushButton_9_clicked()
     }
 }
 
-
+/**
+ * @brief Slot para el evento de clic del botón pushButton_5.
+ * Abre la ventana de búsqueda de paquetes (FindPackage).
+*/
 void MainWindow::on_pushButton_5_clicked()
 {
     ptrFindPackage->show(); /**< Viajar a encontrar paquete */
 }
 
-
+/**
+ * @brief Slot para el evento de clic del botón pushButton_8.
+ * Abre la ventana de búsqueda de turistas (FindTourist).
+*/
 void MainWindow::on_pushButton_8_clicked()
 {
     ptrFindTourist->show();   /**< Viajar a encontrar turista*/

@@ -47,13 +47,20 @@ private slots:
      * @brief Método que se ejecuta cuando se hace clic en el botón "Reset".
     */
     void on_btnReset_clicked();
-
+    /**
+     * @brief Método que se ejecuta cuando se hace clic en el botón pushButton "Volver".
+    */
     void on_pushButton_clicked();
 
 private:
     Ui::RegisterTourist *ui; /**< Puntero a la interfaz de usuario de RegisterTourist. */
     QSqlDatabase database; /**< Base de datos utilizada para almacenar la información de los turistas. */
 
+    /**
+     *  @brief  Esta función recupera el número de paquete asociado con un nombre de paquete determinado.
+     *  @param packageName El nombre del paquete para el que recuperar el número.
+     *  @return El número de paquete como un número entero.
+     */
     int getPackageNumber(const QString& packageName);
 };
 

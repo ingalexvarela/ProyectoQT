@@ -2766,7 +2766,8 @@ Color: #fefefe;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fefefe;
+         <string notr="true">Background:  transparent;
+color: #fefefe;
 font-weight: bold;</string>
         </property>
         <property name="text">
@@ -2788,8 +2789,8 @@ font-weight: bold;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">Background: #000000;
-color: #0000FF;</string>
+         <string notr="true">Background:  transparent;
+color: #FFA500;</string>
         </property>
         <property name="text">
          <string/>
@@ -2811,10 +2812,8 @@ color: #0000FF;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">Padding: 1px;
-Border-radius: 5px;
-Background: #393;
-Color: #fefefe;</string>
+         <string notr="true">Background: #FFDAB9;
+color: #000000;</string>
         </property>
         <property name="text">
          <string>Modificar Perfil</string>
@@ -2862,7 +2861,8 @@ Color: #fefefe;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fefefe;
+         <string notr="true">Background:  transparent;
+color: #fefefe;
 font-weight: bold;</string>
         </property>
         <property name="text">
@@ -2884,8 +2884,8 @@ font-weight: bold;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">Background: #000000;
-color: #0000FF;</string>
+         <string notr="true">Background:  transparent;
+color: #FFA500;</string>
         </property>
         <property name="text">
          <string/>
@@ -2945,8 +2945,8 @@ color: #0000FF;</string>
         <property name="styleSheet">
          <string notr="true">Padding: 1px;
 Border-radius: 5px;
-Background: #339;
-Color: #fefefe;</string>
+Background: #FFDAB9;
+color: #000000;</string>
         </property>
         <property name="text">
          <string>Gestionar de Registros</string>
@@ -2971,8 +2971,8 @@ Color: #fefefe;</string>
         <property name="styleSheet">
          <string notr="true">Padding: 1px;
 Border-radius: 5px;
-Background: #C0FFC0;
-Color: #000000;</string>
+Background: #FFDAB9;
+color: #000000;</string>
         </property>
         <property name="text">
          <string>Gestionar Información Turística</string>
@@ -4610,6 +4610,9 @@ Color: #fefefe;</string>
       </widget>
      </widget>
      <widget class="QWidget" name="page_4">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <widget class="QFrame" name="frame_7">
        <property name="geometry">
         <rect>
@@ -4620,7 +4623,7 @@ Color: #fefefe;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: #101010;</string>
+        <string notr="true">background-image:url(:/images/aventura.jpg) ;</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -4646,8 +4649,9 @@ Color: #fefefe;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">text-align: center;
-color: #393;
+         <string notr="true"> background: transparent;
+text-align: center;
+color: #000000;
 margin: 0 auto;
 font-size: 35px;
 font-family: 'Droid Sans';</string>
@@ -4659,8 +4663,8 @@ font-family: 'Droid Sans';</string>
        <widget class="QPushButton" name="editedButton_2">
         <property name="geometry">
          <rect>
-          <x>700</x>
-          <y>420</y>
+          <x>670</x>
+          <y>460</y>
           <width>141</width>
           <height>31</height>
          </rect>
@@ -4758,8 +4762,8 @@ Color: #fefefe;</string>
        <widget class="QPushButton" name="backButton_5">
         <property name="geometry">
          <rect>
-          <x>700</x>
-          <y>380</y>
+          <x>670</x>
+          <y>410</y>
           <width>141</width>
           <height>31</height>
          </rect>
@@ -4783,7 +4787,7 @@ Color: #fefefe;</string>
        <widget class="QPushButton" name="pageButton">
         <property name="geometry">
          <rect>
-          <x>700</x>
+          <x>670</x>
           <y>510</y>
           <width>155</width>
           <height>27</height>
@@ -4798,8 +4802,8 @@ Color: #fefefe;</string>
         <property name="styleSheet">
          <string notr="true">Padding: 1px;
 Border-radius: 0;
-Background: #800080;
-Color: #fefefefe;</string>
+color: #000000;
+background: #FFA500;</string>
         </property>
         <property name="text">
          <string>VOLVER AL PANEL</string>
@@ -4809,7 +4813,7 @@ Color: #fefefefe;</string>
         <property name="geometry">
          <rect>
           <x>200</x>
-          <y>430</y>
+          <y>460</y>
           <width>181</width>
           <height>31</height>
          </rect>
@@ -4832,14 +4836,15 @@ Color: #fefefe;</string>
        <widget class="QLabel" name="adminLabel">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>380</y>
+          <x>630</x>
+          <y>370</y>
           <width>241</width>
           <height>16</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fefefe;</string>
+         <string notr="true">background: #00FFFF;
+color: #000000;</string>
         </property>
         <property name="text">
          <string>Asegúrese de cualquier alteración que haga.</string>
@@ -4850,7 +4855,7 @@ Color: #fefefe;</string>
          <rect>
           <x>20</x>
           <y>70</y>
-          <width>479</width>
+          <width>381</width>
           <height>16</height>
          </rect>
         </property>
@@ -4862,7 +4867,8 @@ Color: #fefefe;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fefefe;</string>
+         <string notr="true">color: #fefefe;
+background: transparent;</string>
         </property>
         <property name="text">
          <string/>
@@ -4871,7 +4877,7 @@ Color: #fefefe;</string>
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>440</x>
+          <x>200</x>
           <y>410</y>
           <width>171</width>
           <height>31</height>
@@ -4884,7 +4890,7 @@ Color: #fefefe;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #00FFFF;
+         <string notr="true">background: #00FFFF;
 color: #0000FF;
 </string>
         </property>
@@ -4895,8 +4901,8 @@ color: #0000FF;
        <widget class="QPushButton" name="pushButton_2">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>450</y>
+          <x>20</x>
+          <y>410</y>
           <width>131</width>
           <height>31</height>
          </rect>
@@ -4908,7 +4914,7 @@ color: #0000FF;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #FFFF00;
+         <string notr="true">background: #00FFFF;
 color: #0000FF;
 </string>
         </property>
@@ -4920,7 +4926,7 @@ color: #0000FF;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>380</y>
+          <y>370</y>
           <width>155</width>
           <height>27</height>
          </rect>
@@ -4935,18 +4941,18 @@ color: #0000FF;
         <property name="styleSheet">
          <string notr="true">Padding: 1px;
 Border-radius: 0;
-Background: #393;
-Color: #fefefe;</string>
+Background: #000000;
+Color: #FFFFFF;</string>
         </property>
         <property name="text">
-         <string>Panel USUARIOS</string>
+         <string>VER USUARIOS</string>
         </property>
        </widget>
        <widget class="QPushButton" name="adminBrowse">
         <property name="geometry">
          <rect>
           <x>200</x>
-          <y>380</y>
+          <y>370</y>
           <width>181</width>
           <height>27</height>
          </rect>
@@ -4961,18 +4967,18 @@ Color: #fefefe;</string>
         <property name="styleSheet">
          <string notr="true">Padding: 1px;
 Border-radius: 0;
-Background: #393;
-Color: #fefefe;</string>
+Background: #000000;
+Color: #FFFFFF;</string>
         </property>
         <property name="text">
-         <string>Panel ADMINISTRADORES</string>
+         <string>VER ADMINISTRADORES</string>
         </property>
        </widget>
        <widget class="QPushButton" name="delAButton_2">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>430</y>
+          <y>460</y>
           <width>141</width>
           <height>31</height>
          </rect>

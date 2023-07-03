@@ -33,10 +33,13 @@ public:
 
 private slots:
     /**
-    * @brief Slot para el evento de clic del botón btnFindPackage.
+    * @brief Slot para el evento de clic del botón btnFindPackage "buscar".
     */
     void on_btnFindPackage_clicked();
 
+    /**
+    * @brief Slot para el evento de clic del botón pushButton "volver".
+    */
     void on_pushButton_clicked();
 
 private:

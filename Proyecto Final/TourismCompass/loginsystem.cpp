@@ -3,6 +3,15 @@
 * @brief Implementación de la clase LoginSystem
 */
 
+/**
+ * @brief Inclusiones de archivos y declaraciones de variables globales.
+ * Este archivo contiene las inclusiones de archivos de encabezado necesarios para el funcionamiento del programa,
+ * así como la declaración de variables globales utilizadas en el sistema de inicio de sesión. Las inclusiones de
+ * archivos incluyen "loginsystem.h", "./ui_loginsystem.h", "qdb.h" y otros, que proporcionan las definiciones y
+ * declaraciones necesarias para el código que sigue. Las variables globales declaradas aquí son globalEmail y
+ * globalInteger, que se utilizan para almacenar información global en el programa. Además, se declara un objeto
+ * QDBLite::DB llamado db, que representa una conexión a una base de datos utilizada en el sistema.
+*/
 #include "loginsystem.h"
 #include "./ui_loginsystem.h"
 #include "qdb.h"
@@ -13,14 +22,24 @@
 #include <QSqlError>
 #include "global.h"
 #include <QTimer>
-
 QString globalEmail; // Declaración de la variable global
 QString globalInteger;  // Declaración de la variable global
 QDBLite::DB db;
 
+
 /**
-* @brief Constructor de la clase LoginSystem.
-* @param parent Puntero al widget padre (opcional).
+ * @brief Constructor de la clase LoginSystem.
+ * @param parent Puntero al widget padre.
+ * Este constructor inicializa la interfaz de usuario y realiza algunas configuraciones iniciales. Establece el
+ * modo de visualización del campo de contraseña, establece las indicaciones de entrada del método de entrada y
+ * crea una instancia del objeto MainWindow.
+ * La interfaz de usuario se configura utilizando el método setupUi() de la clase Ui::LoginSystem, que realiza
+ * la inicialización de los elementos de la interfaz definidos en el archivo de interfaz generado.
+ * La conexión a la base de datos se establece utilizando el objeto db de la clase QDBLite::DB, que se inicializa
+ * llamando al método Connect() y pasando la ruta de la base de datos como parámetro. El estado de la conexión
+ * se guarda en la propiedad dbstate. Después de la configuración inicial, se establecen índices en los widgets
+ * winStack y stackedWidget para mostrar la página de inicio de sesión y ocultar algunas otras páginas.
+ * Finalmente, se crea una instancia del objeto MainWindow y se asigna a la variable ptrMainWindow.
 */
 LoginSystem::LoginSystem(QWidget *parent) :
     QMainWindow(parent),
@@ -31,7 +50,6 @@ LoginSystem::LoginSystem(QWidget *parent) :
     qDebug() << "Directorio de la aplicación:" << QCoreApplication::applicationDirPath();
     ui->winStack->setCurrentIndex(0);
     ui->stackedWidget->setCurrentIndex(1);
-
     ui->passwordBox->setEchoMode(QLineEdit::Password);
     ui->passwordBox->setInputMethodHints(Qt::ImhHiddenText| Qt::ImhNoPredictiveText|Qt::ImhNoAutoUppercase);
     ui->pBox->setEchoMode(QLineEdit::Password);
@@ -52,7 +70,15 @@ LoginSystem::~LoginSystem()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de inicio de sesión.
+ * @brief Slot para el evento de clic del botón de inicio de sesión.
+ * Este slot se activa cuando se hace clic en el botón de inicio de sesión. Realiza el proceso de inicio de sesión
+ * verificando las credenciales proporcionadas en los campos de nombre de usuario y contraseña.
+ * Llama al método Login() para verificar las credenciales y guarda el resultado en la variable loggedIn.
+ * Si el inicio de sesión es exitoso (loggedIn es verdadero), guarda el nombre de usuario, contraseña y correo
+ * electrónico en las variables correspondientes, actualiza la variable global globalEmail, establece el texto de
+ * la etiqueta de inicio de sesión en blanco y cambia el índice de winStack para mostrar la página principal.
+ * Si el inicio de sesión falla (loggedIn es falso), establece el texto de la etiqueta de inicio de sesión en
+ * "Error al iniciar sesión: ¡Credenciales no válidas!".
 */
 void LoginSystem::on_loginButton_clicked()
 {
@@ -74,11 +100,14 @@ void LoginSystem::on_loginButton_clicked()
 }
 
 /**
-* @brief Realiza el inicio de sesión comprobando las credenciales proporcionadas.
-* @param u Nombre de usuario.
-* @param p Contraseña.
-* @param e email.
-* @return true si las credenciales son válidas, false en caso contrario.
+ * @brief Realiza el proceso de inicio de sesión.
+ * Verifica las credenciales proporcionadas (nombre de usuario, contraseña y correo electrónico) en la base de
+ * datos. Si las credenciales son válidas, oculta ciertos elementos de la interfaz de usuario, actualiza las
+ * propiedades de visibilidad de algunos botones y campos de texto, y devuelve verdadero.
+ * @param u El nombre de usuario proporcionado.
+ * @param p La contraseña proporcionada.
+ * @param e El correo electrónico proporcionado.
+ * @return Verdadero si las credenciales son válidas, falso de lo contrario.
 */
 bool LoginSystem::Login(QString u, QString p, QString e)
 {
@@ -106,7 +135,10 @@ bool LoginSystem::Login(QString u, QString p, QString e)
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de registro.
+ * @brief Maneja el evento de clic en el botón de registro.
+ * Actualiza los campos de texto de nombre de usuario y contraseña en la interfaz de usuario con los
+ * valores ingresados en los campos correspondientes. Luego, cambia el índice de la pila de ventanas
+ * para mostrar la página de registro.
 */
 void LoginSystem::on_regButton_clicked()
 {
@@ -116,9 +148,11 @@ void LoginSystem::on_regButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de cierre de sesión (logoutButton).
-* Solicita una confirmación al usuario antes de cerrar la sesión.
-* Si el usuario confirma, se realiza el cierre de sesión y se restablecen los campos y la interfaz de usuario.
+ * @brief Maneja el evento de clic en el botón de cerrar sesión.
+ * Muestra un cuadro de diálogo de confirmación para verificar si el usuario desea cerrar sesión.
+ * Si se selecciona "Sí", se establece la variable de inicio de sesión en falso, se borra el texto del
+ * campo de contraseña y se muestra un mensaje de confirmación en la etiqueta de inicio de sesión.
+ * Luego, cambia el índice de la pila de ventanas para mostrar la página de inicio de sesión.
 */
 void LoginSystem::on_logoutButton_clicked()
 {
@@ -134,9 +168,14 @@ void LoginSystem::on_logoutButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de registro completo (completeRegButton).
-* Valida los campos de entrada del formulario de registro y realiza el registro en la base de datos si no hay errores.
-* Si el registro es exitoso, se restablecen los campos del formulario y se muestra un mensaje de éxito.
+ * @brief Maneja el evento de clic en el botón de completar registro.
+ * Verifica si los campos obligatorios (nombre de usuario, contraseña, correo electrónico y apellido) están llenos.
+ * Si alguno de ellos está vacío, muestra un mensaje de advertencia en los campos correspondientes. Comprueba si el
+ * nombre de usuario y el correo electrónico ya existen en la base de datos. Si alguno de ellos ya existe, muestra
+ * un mensaje de advertencia y solicita al usuario que elija un nombre de usuario o correo electrónico diferente.
+ * Si no hay errores, copia la imagen de perfil seleccionada (si existe) a una ubicación específica. Luego, realiza
+ * el registro en la base de datos, borra los campos de texto y muestra un mensaje de confirmación en la etiqueta de
+ * inicio de sesión. Cambia el índice de la pila de ventanas para mostrar la página de inicio de sesión.
 */
 void LoginSystem::on_completeRegButton_clicked()
 {
@@ -254,8 +293,9 @@ void LoginSystem::on_completeRegButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de retroceso (backButton).
-* Restablece el texto del label de inicio de sesión y cambia la página actual del stacked widget al índice 0.
+ * @brief Maneja el evento de clic en el botón de retroceso.
+ * Borra cualquier mensaje mostrado en la etiqueta de inicio de sesión y cambia el índice de la pila de ventanas
+ * para mostrar la página de inicio de sesión.
 */
 void LoginSystem::on_backButton_clicked()
 {
@@ -264,8 +304,8 @@ void LoginSystem::on_backButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de retroceso (backButton_2).
-* Cambia la página actual del stacked widget al índice 2.
+ * @brief Maneja el evento de clic en el botón de retroceso.
+ * Cambia el índice de la pila de ventanas para mostrar la página principal después de iniciar sesión.
 */
 void LoginSystem::on_backButton_2_clicked()
 {
@@ -273,9 +313,10 @@ void LoginSystem::on_backButton_2_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de editar (editButton).
-* Recupera los datos del usuario actual de la base de datos y los muestra en los campos de edición correspondientes.
-* Cambia la página actual del stacked widget al índice 3.
+ * @brief Maneja el evento de clic en el botón de edición de perfil.
+ * Recupera los datos del usuario de la base de datos y los muestra en los campos correspondientes del
+ *  formulario de edición de perfil. Cambia el índice de la pila de ventanas para mostrar la página de
+ *  edición de perfil.
 */
 void LoginSystem::on_editButton_clicked()
 {
@@ -306,10 +347,11 @@ void LoginSystem::on_editButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de eliminar cuenta (delButton).
-* Solicita confirmación al usuario antes de eliminar su cuenta de usuario.
-* Si se confirma la eliminación, se borra la imagen asociada a la cuenta (si existe) y se elimina el registro de usuario de la base de datos.
-* Se borran los datos de inicio de sesión, se muestra un mensaje y se cambia la página actual del stacked widget al índice 0.
+ * @brief Maneja el evento de clic en el botón de eliminación de cuenta.
+ * Muestra un cuadro de diálogo de confirmación para verificar si el usuario realmente desea eliminar su cuenta.
+ * Si el usuario confirma la eliminación, se borra la cuenta de la base de datos, incluyendo la imagen de perfil
+ * asociada. Luego, se borran los datos de los campos de nombre de usuario y contraseña, se muestra un mensaje de
+ * cuenta borrada y se cambia el índice de la pila de ventanas para mostrar la página de inicio de sesión.
 */
 void LoginSystem::on_delButton_clicked()
 {
@@ -339,10 +381,14 @@ void LoginSystem::on_delButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de clic en el botón de guardar cambios (editedButton).
-* Valida los campos de edición y actualiza los datos del usuario en la base de datos.
-* Si todos los campos son válidos, se actualiza la imagen asociada a la cuenta (si se ha seleccionado una nueva imagen).
-* Se muestra un mensaje de éxito y se cambia la página actual del stacked widget al índice 2.
+ * @brief Maneja el evento de clic en el botón de edición de perfil.
+ * Verifica que los campos obligatorios (nombre de usuario, contraseña, correo electrónico, primer nombre y apellido)
+ * no estén vacíos. Si alguno de los campos está vacío, se muestra un mensaje de advertencia en los campos correspondientes.
+ * Luego, se verifica si el nombre de usuario y el correo electrónico ingresados ya existen en la base de datos.
+ * Si alguno de ellos ya existe (excepto si pertenecen al usuario actual), se muestra un mensaje de advertencia en los
+ * campos correspondientes. Si no hay errores, se actualiza el perfil del usuario en la base de datos, incluyendo la
+ * imagen de perfil si se seleccionó una nueva. Se borra el nombre de archivo de imagen temporal.
+ * Finalmente, se cambia el índice de la pila de ventanas para mostrar la página de perfil.
 */
 void LoginSystem::on_editedButton_clicked()
 {
@@ -452,15 +498,14 @@ void LoginSystem::on_editedButton_clicked()
 }
 
 /**
-* @brief Manejador del evento de cambio de página en el stacked widget (winStack).
-* Actualiza la interfaz según la página actualmente mostrada.
-* Si la página actual es la página de edición de perfil (índice 3) y el usuario ha iniciado sesión,
-* muestra la imagen asociada a la cuenta del usuario si existe.
-* Si la página actual es la página de perfil (índice 2) y el usuario ha iniciado sesión,
-* muestra la imagen y los datos de perfil del usuario y muestra el botón de administrador si el usuario tiene rango de administrador.
-* Si la página actual es la página de confirmación de eliminación de cuenta (índice 4) y el usuario ha iniciado sesión,
-* cambia la página actual del stacked widget al índice 0 (página de inicio de sesión).
-* @param arg1 Índice de la página actual del stacked widget.
+ * @brief Maneja el cambio de índice en la pila de ventanas.
+ * Cuando se cambia a la página de edición de perfil (índice 3) o a la página de perfil (índice 2),
+ * se comprueba si el usuario ha iniciado sesión. Si ha iniciado sesión, se carga la imagen de perfil correspondiente
+ * si existe. En la página de perfil (índice 2), se obtienen y muestran los detalles del usuario, como el nombre
+ * completo, correo electrónico y rango. Si el usuario tiene un rango de "-1", se muestra el botón de administrador
+ * y el campo de correo electrónico editable. Si el usuario tiene un rango de "1", se muestra el botón para acceder
+ * a las funciones de administrador. Cuando se cambia a la página de eliminación de cuenta (índice 4), se establece
+ * el índice de la pila de ventanas de la página de perfil (índice 0).
 */
 void LoginSystem::on_winStack_currentChanged(int arg1)
 {
@@ -580,9 +625,27 @@ void LoginSystem::on_userBrowse_clicked()
 }
 
 /**
-* @brief Manejador del evento de cambio de página en el stacked widget.
-* Actualiza la tabla de usuarios o administradores según la página actual.
-*/
+ * @brief Slot para manejar el cambio de página en el widget apilado (stacked widget).
+ * @param arg1 El índice de la página actual en el stacked widget.
+ * Realiza diferentes acciones dependiendo de la página que se esté mostrando.
+ * Si arg1 es igual a 0 y el usuario ha iniciado sesión:
+ *    - Establece el texto de la etiqueta "headLabel" como "CLIENTES".
+ *    - Crea un nuevo QSqlTableModel llamado "tblMdl".
+ *    - Establece la tabla del modelo como "sys_users".
+ *    - Aplica un filtro en el modelo para mostrar solo los registros con un rango diferente de -1 y 0.
+ *    - Selecciona los datos en el modelo.
+ *    - Asigna el modelo a la vista "tableView".
+ *    - Inicia una transacción en la base de datos asociada al modelo.
+ *
+ * Si arg1 es igual a 1 y el usuario ha iniciado sesión:
+ *    - Establece el texto de la etiqueta "headLabel" como "ADMINISTRADORES".
+ *    - Crea un nuevo QSqlTableModel llamado "tblMdl".
+ *    - Establece la tabla del modelo como "sys_users".
+ *    - Aplica un filtro en el modelo para mostrar solo los registros con un rango igual a -1 o 0.
+ *    - Selecciona los datos en el modelo.
+ *    - Asigna el modelo a la vista "tableView_2".
+ *    - Inicia una transacción en la base de datos asociada al modelo.
+ */
 void LoginSystem::on_stackedWidget_currentChanged(int arg1)
 {
     if(arg1 == 0 && this->loggedIn)
@@ -649,9 +712,20 @@ void LoginSystem::on_adminButton_2_clicked()
 }
 
 /**
- * @brief Manejador del evento del botón "Add User".
- * Agrega un nuevo usuario administrador al sistema.
- */
+ * @brief Slot para manejar el evento de clic en el botón "pushButton".
+ *
+ * Genera un nuevo administrador agregando un registro a la tabla "sys_users" en la base de datos.
+ *
+ * Comienza generando un nombre de usuario y correo electrónico base predefinidos.
+ * Luego realiza una consulta de selección para verificar si el nombre de usuario y el correo electrónico ya existen
+ * en la base de datos. Si existen, se genera un nuevo nombre de usuario y correo electrónico agregando un contador al
+ * nombre base y se repite el proceso hasta encontrar uno único. Una vez que se encuentra un nombre de usuario y
+ * correo electrónico únicos, se ejecuta una consulta de inserción para agregar el nuevo administrador a la base
+ * de datos. Se muestra un mensaje de éxito en la etiqueta "adminLabel" y se establece un temporizador para mostrar
+ * un mensaje adicional después de 3 segundos. Si ocurre algún error durante el proceso de consulta, se muestra un
+ * mensaje de error en la salida de depuración. Finalmente, se llama a la función "on_stackedWidget_currentChanged"
+ * con el argumento 1 para actualizar la vista de administradores en el stacked widget.
+*/
 void LoginSystem::on_pushButton_clicked()
 {
     QString usernameBase = "admi";
@@ -710,8 +784,17 @@ void LoginSystem::on_pushButton_clicked()
 }
 
 /**
-* @brief Manejador del evento del botón "Add Client".
-* Agrega un nuevo usuario cliente al sistema.
+ * @brief Slot para manejar el evento de clic en el botón "pushButton_2".
+ * Genera un nuevo usuario cliente agregando un registro a la tabla "sys_users" en la base de datos.
+ * Comienza generando un nombre de usuario y correo electrónico base predefinidos.
+ * Luego realiza una consulta de selección para verificar si el nombre de usuario y el correo electrónico ya existen
+ * en la base de datos. Si existen, se genera un nuevo nombre de usuario y correo electrónico agregando un contador
+ * al nombre base y se repite el proceso hasta encontrar uno único. Una vez que se encuentra un nombre de usuario y
+ * correo electrónico únicos, se ejecuta una consulta de inserción para agregar el nuevo usuario cliente a la base de
+ * datos. Se muestra un mensaje de éxito en la etiqueta "adminLabel" y se establece un temporizador para mostrar un
+ * mensaje adicional después de 3 segundos. Si ocurre algún error durante el proceso de consulta, se muestra un
+ * mensaje de error en la salida de depuración. Finalmente, se llama a la función "on_stackedWidget_currentChanged"
+ * con el argumento 0 para actualizar la vista de clientes en el stacked widget.
 */
 void LoginSystem::on_pushButton_2_clicked()
 {
@@ -769,18 +852,32 @@ void LoginSystem::on_pushButton_2_clicked()
     on_stackedWidget_currentChanged(0); //OJO
 }
 
+/**
+ * @brief Slot para manejar el evento de clic en el botón "pushButton_3".
+ * Cierra la aplicación al llamar a la función `quit()` de QCoreApplication.
+*/
 void LoginSystem::on_pushButton_3_clicked()
 {
   QCoreApplication::quit();
 }
 
-
+/**
+ * @brief Slot para manejar el evento de clic en el botón "adminButton_3".
+ * Muestra la ventana principal (MainWindow) al llamar a la función `show()` en el puntero `ptrMainWindow`.
+ * Este botón permite al usuario navegar de regreso a la ventana principal desde la vista de administrador.
+*/
 void LoginSystem::on_adminButton_3_clicked()
 {
     ptrMainWindow->show(); /**< Viajar a Main */
 }
 
-
+/**
+ * @brief Slot para manejar el evento de clic en el botón "delAButton_2".
+ * Muestra un cuadro de diálogo de confirmación para confirmar la eliminación de todos los usuarios, excepto los
+ * administradores y el usuario actual. Si el usuario confirma, se ejecuta una consulta para eliminar los usuarios
+ * de rango 1 (clientes) que no sean el usuario actual. Actualiza el texto del QLabel "adminLabel" con un mensaje
+ * de éxito y llama a la función "on_stackedWidget_currentChanged(0)" para cambiar a la vista de "CLIENTES".
+*/
 void LoginSystem::on_delAButton_2_clicked()
 {
     if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,

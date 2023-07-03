@@ -114,8 +114,14 @@ private slots:
 
     void on_delAButton_2_clicked();
 
+/**
+ * @brief Variables privadas de la clase LoginSystem.
+ * Esta sección contiene las variables privadas utilizadas en la clase LoginSystem.
+ * Estas variables incluyen el objeto de interfaz de usuario (ui), el nombre de usuario (username),
+ * la contraseña (password), el correo electrónico (email) y un puntero al objeto MainWindow (ptrMainWindow).
+*/
 private:
-    Ui::LoginSystem *ui;
+    Ui::LoginSystem *ui; /**<interfaz de usuario. */
     QString username; /**< El nombre de usuario. */
     QString password; /**< La contraseña. */
     QString email; /**< email */

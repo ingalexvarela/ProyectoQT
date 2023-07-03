@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>user.png</file>
-        <file>poli.png</file>
-        <file>pycho.png</file>
         <file>background_image.jpg</file>
         <file>icon.ico</file>
         <file>logo2.jpg</file>

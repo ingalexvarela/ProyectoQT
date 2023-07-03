@@ -41,7 +41,9 @@ private slots:
     * @brief Slot para el evento de clic del botón btnReset.
     */
     void on_btnReset_clicked();
-
+    /**
+    * @brief Slot para el evento de clic del botón volver.
+    */
     void on_btnSave_2_clicked();
 
 private:

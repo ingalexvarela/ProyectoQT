@@ -15,30 +15,16 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 set(PROJECT_SOURCES
         # login
         main.cpp
-        loginsystem.h
-        loginsystem.cpp
-        loginsystem.ui
+        loginsystem.h loginsystem.cpp loginsystem.ui
+        qdb.h qdb.cpp
         elements.qrc
-        qdb.h
-        qdb.cpp
         # panel de control
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        mainwindow.h mainwindow.cpp mainwindow.ui
         global.h
-
-        addpackage.h
-        addpackage.cpp
-        addpackage.ui
-        registertourist.h
-        registertourist.cpp
-        registertourist.ui
-        findtourist.h
-        findtourist.cpp
-        findtourist.ui
-        findpackage.h
-        findpackage.cpp
-        findpackage.ui
+        addpackage.h addpackage.cpp addpackage.ui
+        registertourist.h registertourist.cpp registertourist.ui
+        findtourist.h findtourist.cpp findtourist.ui
+        findpackage.h findpackage.cpp findpackage.ui
         databaseheader.h
         resource.qrc
 )
