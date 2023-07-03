@@ -1,40 +1,21 @@
 # ninja log v5
-14793	26936	7100642879238194	CMakeFiles/TourismCompass.dir/findtourist.cpp.obj	5e847b8e6455b9ab
-15	939	7100642620233649	TourismCompass_autogen/timestamp	1480363144d494e0
-19	1636	7100648238261319	build.ninja	56b28dcb354a2b76
-8997	20789	7100608335968896	CMakeFiles/TourismCompass.dir/main.cpp.obj	98131a2a85eb8561
-1231	1623	7100533995008234	TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
-45673	55884	7100519240864818	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp.obj	bce8fe4f2a803a68
-10320	10605	7100518832856626	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
-15	939	7100642620233649	TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
-15	939	7100642620233649	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/timestamp	1480363144d494e0
-15	939	7100642620233649	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
-1231	1623	7100533995008234	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
-10320	10605	7100518832856626	TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
-10687	20153	7100518926307573	CMakeFiles/TourismCompass.dir/qdb.cpp.obj	2ac8b80b65157a4f
-1006	14791	7100642758612863	CMakeFiles/TourismCompass.dir/addpackage.cpp.obj	e5603503fa62fbd8
-25828	39005	7100534368235645	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp.obj	e931e2fd4c582a73
-996	26945	7100642880143982	CMakeFiles/TourismCompass.dir/loginsystem.cpp.obj	640b66b2ec3d3ced
-1000	14782	7100642758432051	CMakeFiles/TourismCompass.dir/mainwindow.cpp.obj	e273e7fd670f4676
-26937	32890	7100642939797232	CMakeFiles/TourismCompass.dir/findpackage.cpp.obj	f34cbddafca29447
-32891	33406	7100642944810662	TourismCompass.exe	b55f6a15c1aa5075
-14783	28687	7100642897670400	CMakeFiles/TourismCompass.dir/registertourist.cpp.obj	72b9d614f267982c
-8986	22254	7100608337577326	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/mocs_compilation.cpp.obj	397871e2c821a7b9
-28	8269	7100648238261319	build.ninja	56b28dcb354a2b76
-14	813	7100648247647276	TourismCompass_autogen/timestamp	1480363144d494e0
-14	813	7100648247647276	TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
-14	813	7100648247647276	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/timestamp	1480363144d494e0
-14	813	7100648247647276	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
-876	1421	7100648252713402	TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
-876	1421	7100648252713402	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
-871	1597	7100648254272431	TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
-871	1597	7100648254272431	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
-1603	11401	7100648353434108	CMakeFiles/TourismCompass.dir/findpackage.cpp.obj	f34cbddafca29447
-1598	11677	7100648356264753	CMakeFiles/TourismCompass.dir/addpackage.cpp.obj	e5603503fa62fbd8
-1612	14830	7100648387646660	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp.obj	bce8fe4f2a803a68
-11679	21908	7100648458563065	CMakeFiles/TourismCompass.dir/registertourist.cpp.obj	72b9d614f267982c
-14832	25566	7100648494452219	CMakeFiles/TourismCompass.dir/findtourist.cpp.obj	5e847b8e6455b9ab
-11402	32464	7100648563444065	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp.obj	e931e2fd4c582a73
-25567	37022	7100648609728063	CMakeFiles/TourismCompass.dir/mainwindow.cpp.obj	e273e7fd670f4676
-21909	40790	7100648647399464	CMakeFiles/TourismCompass.dir/loginsystem.cpp.obj	640b66b2ec3d3ced
-40791	51257	7100648751904008	TourismCompass.exe	b55f6a15c1aa5075
+8	12650	7101134641541958	TourismCompass_autogen/timestamp	1480363144d494e0
+8	12650	7101134641541958	TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
+8	12650	7101134641541958	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/timestamp	1480363144d494e0
+8	12650	7101134641541958	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/mocs_compilation.cpp	1480363144d494e0
+12656	12920	7101134649067057	TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
+12656	12920	7101134649067057	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp	cc6edc59e5c3e95c
+12651	12984	7101134649755015	TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
+12651	12984	7101134649755015	C:/Users/alex_/Documents/proyecto final/ProyectoQT/Proyecto Final/Proyecto_TourismCompass/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp	f9006606aee4189f
+12991	23331	7101134753130681	CMakeFiles/TourismCompass.dir/qdb.cpp.obj	2ac8b80b65157a4f
+12997	23373	7101134753211000	CMakeFiles/TourismCompass.dir/main.cpp.obj	98131a2a85eb8561
+12985	33898	7101134858700866	CMakeFiles/TourismCompass.dir/registertourist.cpp.obj	72b9d614f267982c
+23377	38961	7101134858902158	CMakeFiles/TourismCompass.dir/addpackage.cpp.obj	e5603503fa62fbd8
+33901	43704	7101134956966355	CMakeFiles/TourismCompass.dir/mainwindow.cpp.obj	e273e7fd670f4676
+38963	48753	7101135007467460	CMakeFiles/TourismCompass.dir/findpackage.cpp.obj	f34cbddafca29447
+23365	53006	7101135017118001	CMakeFiles/TourismCompass.dir/loginsystem.cpp.obj	640b66b2ec3d3ced
+43706	53023	7101135049819740	CMakeFiles/TourismCompass.dir/findtourist.cpp.obj	5e847b8e6455b9ab
+48755	56823	7101135087522334	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_resource.cpp.obj	e931e2fd4c582a73
+53010	57335	7101135093275643	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/EWIEGA46WW/qrc_elements.cpp.obj	bce8fe4f2a803a68
+53025	60303	7101135123044945	CMakeFiles/TourismCompass.dir/TourismCompass_autogen/mocs_compilation.cpp.obj	397871e2c821a7b9
+60305	60786	7101135127678752	TourismCompass.exe	b55f6a15c1aa5075

@@ -2,6 +2,7 @@
     <qresource prefix="/images">
         <file>background_image.jpg</file>
 	<file>busca.jpg</file>
+	<file>b.jpg</file>
 	<file>c.jpg</file>
 	<file>d.jpg</file>
 	<file>logo.jpg</file>

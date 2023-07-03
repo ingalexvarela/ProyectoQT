@@ -13,11 +13,15 @@ GENERATE_LATEX = NO
 EXCLUDE =
 
 # Directorios de código fuente
-INPUT = "." "addpackage.h" "addpackage.cpp" "main.cpp" "mainwindow.h" "mainwindow.cpp" 
+INPUT = "./TourismCompass/" "main.cpp" "loginsystem.h" "loginsystem.cpp" "qdb.h" "qdb.cpp" "mainwindow.h" "mainwindow.cpp"
+ "global.h" "addpackage.h" "addpackage.cpp" "registertourist.h" "registertourist.cpp" "findtourist.h" "findtourist.cpp"
+ "findpackage.h" "findpackage.cpp" "databaseheader.h" "README.md"
+
+# Archivo de página principal
+MAIN_PAGE = mainpage.md
 
 # Establecer la extensión de los archivos de código fuente
-FILE_PATTERNS = *.cpp *.hpp
+FILE_PATTERNS = *.cpp *.h
 
 # Nombre del proyecto
 PROJECT_NAME = "Proyecto- Gestion del turismo"
-
